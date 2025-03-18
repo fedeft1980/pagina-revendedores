@@ -1,12 +1,246 @@
 <!DOCTYPE html>
-<HTML>
-  <head>
-    <title>Mi primer WEB</title>
-  </head>
-  <body>
-    <div id="una capa">
-      <h1>Hola mundo!</h1>
-      <p>Este es un ejemplo del uso de HTML para crear un documento web que nuestro navegador es capaz de interpretar.</p>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Productos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+        }
+        nav {
+            background: #0056b3;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block;
+        }
+        nav a:hover {
+            background: #003d7a;
+            border-radius: 5px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .producto {
+            background: white;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            display: none;
+        }
+        .producto img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .producto h3 {
+            margin: 10px 0 5px;
+        }
+        .whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>FtStreaming</header>
+
+    <nav>
+        <a href="#" onclick="mostrarCategoria('streaming')">Streaming</a>
+        <a href="#" onclick="mostrarCategoria('tv')">TV Digital</a>
+        <a href="#" onclick="mostrarCategoria('libros')">Libros</a>
+        <a href="#" onclick="mostrarCategoria('juegos')">Juegos</a>
+        <a href="#" onclick="mostrarCategoria('seguidores')">Seguidores</a>
+    </nav>
+
+    <div class="container">
+        <!-- Categoría Streaming -->
+        <div class="producto streaming">
+            <img src="img/netflixpag.jpg" alt="Netflix">
+            <h3>Netflix Premium 1 perfil </h3>
+            <p>Acceso completo a contenido 4K. Perfil privado protegido por pin </p>
+            <strong>$3200</strong>
+            <h4> Consulta por promos por mas meses </h4>
+            <a class="whatsapp-btn" onclick="enviarWhatsApp('Netflix Premium 1 perfil', 3200)">
+                Escribime por WhatsApp
+            </a>
+        </div>
+
+        <div class="producto streaming">
+            <img src="img/netflixpag.jpg" alt="Netflix">
+            <h3>Netflix Cuenta Completa </h3>
+            <p>Con Acceso a correo o bot para codigos hogar.</p>
+            <strong>$9800</strong>
+            <p><strong>5 perfiles 4 dispositivos en simultaneo</strong></p>
+        </div>
+
+        <div class="producto streaming">
+            <img src="img/maxpag.jpg" alt="Max">
+            <h3>Max Perfil </h3>
+            <p>Con TNT sports.</p>
+            <strong>$1800</strong>
+        </div>
+
+        <div class="producto streaming">
+            <img src="img/maxpag.jpg" alt="Max">
+            <h3>Max Cuenta Completa Standard </h3>
+            <p>Con TNT sports.</p>
+            <strong>$3800</strong>
+        </div>
+
+        <div class="producto streaming">
+            <img src="img/primepag.png" alt="Prime Video">
+            <h3>Prime Video Perfil</h3>
+            <p>Perfil Protegido por pin.</p>
+            <strong>$1800</strong>
+        </div>
+
+        <div class="producto streaming">
+            <img src="img/paramountpag.jpg" alt="Paramount+">
+            <h3>Paramount+</h3>
+            <p>Perfil.</p>
+            <strong>1 mes $1200</strong>
+            <p><strong>3 Meses 3000 $1200</strong></p>
+            <p><strong>Cuenta completa 1 Mes $2500</strong></p>
+            <p><strong>Cuenta completa 3 Meses $5500</strong></p>
+        </div>
+        <div class="producto streaming">
+            <img src="img/appleimg.png" alt="Apple tv">
+            <h3>Apple Tv</h3>
+            <p>Perfil en cuenta compartida.</p>
+            <strong>$1500</strong>
+            <p>Cuenta Completa.</p>
+            <strong>$3500</strong>
+            <h4>Se pueden contratar hasta por 3 meses</h4>
+        </div>
+
+        <div class="producto streaming">
+            <img src="img/applemls.jpg" alt="Apple tv">
+            <h3>Apple Tv + MLS</h3>
+            <p>Perfil en cuenta compartida.</p>
+            <strong>$1900</strong>
+            <p>Cuenta Completa.</p>
+            <strong>$4000</strong>
+            <h4>Se pueden contratar hasta por 3 meses</h4>
+        </div>
+
+        <div class="producto streaming">
+            <img src="img/disney+.jpg" alt="Disney+ Premium">
+            <h3>Disney+ Premium</h3>
+            <p>Perfil en cuenta compartida protegida por pin.</p>
+            <strong>$3000</strong>
+            <p>Cuenta Completa a Dominio.</p>
+            <strong>$9000</strong>
+            <h4>Se pueden contratar hasta por el tiempo que necesites</h4>
+        </div>
+        <div class="producto streaming">
+            <img src="img/youtubr.png" alt="Youtube Premium + Yotube Music">
+            <h3>Youtube Premium + Yotube Music</h3>
+            <p>Invitacion a grupo familiar.</p>
+            <strong>$1800</strong>
+            <p>Youtube family (1 Mes).</p>
+            <strong>$3500</strong>
+            
+        </div>
+        <div class="producto streaming">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4zJxWiZAQAWP3NkRZwkT7M2ZChzvfZWsT0A&s" alt="Spotify">
+            <h3>Spotify</h3>
+            <p>HAsta 3 meses en misma cuenta.</p>
+            <p></p><strong>1 mes $2500</strong></p>
+            <p></p><strong>2 mesese $4500</strong></p>
+            <p></p><strong>1 mes $6200</strong></p>
+            
+        </div>
+        <div class="producto streaming">
+            <img src="img/crunc.png"alt="Crunchyroll Mega Fan">
+            <h3>Crunchyroll Mega Fan</h3>
+            <p>Venta por perfiles o cuenta completa.</p>
+            <p><strong> Perfil 1 mes $1300</strong></p>
+            <p><strong> Perfil 3 meses $3900</strong></p>
+            <p><strong>Cuenta completa 1 mes $2900</strong></p>
+            <p><strong>Cuenta completa 3 meses $6600</strong></p>
+            
+        </div>
+        <div class="producto streaming">
+            <img src="img/vix.jpg"alt="Vix Premium">
+            <h3>Vix Premium</h3>
+            <p>Venta por perfiles o cuenta completa.</p>
+            <p><strong> Perfil 1 mes $1000</strong></p>
+            <p><strong> Perfil 3 meses $24000</strong></p>
+            <p><strong>Cuenta completa 1 mes $2500</strong></p>
+            <p><strong>Cuenta completa 3 meses $6000</strong></p>
+            
+        </div>
+        <!-- Categoría TV Digital -->
+        <div class="producto tv">
+            <img src="img/construccion.jpg" alt="Cable HD">
+            <h3>Paquete Cable HD</h3>
+            <p>Más de 100 canales en HD.</p>
+            <strong>$</strong>
+        </div>
+
+        <!-- Categoría Libros -->
+        <div class="producto libros">
+            <img src="img/construccion.jpg" alt="Libro">
+            <h3>Libro Digital</h3>
+            <p>El best-seller del momento.</p>
+            <strong>$</strong>
+        </div>
+
+        <!-- Categoría Juegos -->
+        <div class="producto juegos">
+            <img src="img/construccion.jpg" alt="Juego">
+            <h3>Game Pass</h3>
+            <p>Acceso a más de 100 juegos.</p>
+            <strong>$</strong>
+        </div>
+
+        <!-- Categoría Seguidores -->
+        <div class="producto seguidores">
+            <img src="img/construccion.jpg" alt="Seguidores">
+            <h3>Seguidores Instagram</h3>
+            <p>Pack de 1000 seguidores reales.</p>
+            <strong>$</strong>
+        </div>
     </div>
-  </body>  
-</HTML>
+
+    <a class="whatsapp" href="https://wa.me/5492657219227" target="_blank">WhatsApp</a>
+
+    <script>
+        function mostrarCategoria(categoria) {
+            let productos = document.querySelectorAll('.producto');
+            productos.forEach(p => p.style.display = 'none');
+
+            let seleccionados = document.querySelectorAll('.' + categoria);
+            seleccionados.forEach(p => p.style.display = 'block');
+        }
+    </script>
+
+</body>
+</html>
